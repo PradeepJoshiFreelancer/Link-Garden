@@ -1,0 +1,20 @@
+.button {
+    background: #2186ed;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 16px;
+    margin: 3px;
+    cursor: pointer;
+    transition: background 0.2s;
+    display: inline-block;
+    text-align: center;
+  }
+  .button:hover {
+    background: #1765b4;
+  }
+  input[type=file] {
+    display: none;
+  }
+  
