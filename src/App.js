@@ -35,6 +35,7 @@ function App() {
           ? "Link Tables Manager"
           : "Bookmark Extractor - HTML to JSON"}
       </h1>
+
       <div className="tabs">
         <button
           className={activeTab === 1 ? "tab active" : "tab"}

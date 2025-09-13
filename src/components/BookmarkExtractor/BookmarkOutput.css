@@ -1,7 +1,7 @@
 .output-container {
     background: white;
     border-radius: 12px;
-    padding: 20px;
+    padding: 10px;
     box-shadow: 0 8px 20px rgba(0,0,0,0.05);
     text-align: center;
   }
@@ -9,6 +9,7 @@
   h2 {
     text-align: center;
     color: #222;
+    margin-top: 5px;
     margin-bottom: 15px;
   }
   

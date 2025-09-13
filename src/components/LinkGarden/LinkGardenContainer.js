@@ -3,7 +3,7 @@ import TableCard from "./TableCard";
 import Button from "./Button";
 import "./LinkGardenContainer.css";
 
-const LOCAL_STORAGE_KEY = "linkGardenFinalJSON";
+export const LOCAL_STORAGE_KEY = "linkGardenFinalJSON";
 
 const fetchJSON = async () => {
   let cached = null;

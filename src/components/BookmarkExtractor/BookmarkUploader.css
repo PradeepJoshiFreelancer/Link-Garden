@@ -23,4 +23,16 @@
   .file-input {
     display: none;
   }
+  .label-link {
+    color: #2186ed;
+    font-weight: 500;
+    text-decoration: underline;
+    margin-right: 8px;
+    cursor: pointer;
+  }
   
+  .link-container{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+  }

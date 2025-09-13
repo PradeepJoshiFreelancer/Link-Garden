@@ -1,5 +1,6 @@
 import React from "react";
 import "./BookmarkUploader.css";
+import { LOCAL_STORAGE_KEY } from "../LinkGarden/LinkGardenContainer";
 
 export default function BookmarkUploader({ setJsonOutput, setError }) {
   function handleFileUpload(event) {
@@ -12,6 +13,9 @@ export default function BookmarkUploader({ setJsonOutput, setError }) {
       try {
         const parsedJson = parseBookmarksHtml(htmlContent);
         setJsonOutput(parsedJson);
+        if (typeof window !== "undefined") {
+          localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(parsedJson));
+        }
         setError(null);
       } catch (err) {
         setError("Error parsing bookmarks HTML: " + err.message);
@@ -62,6 +66,32 @@ export default function BookmarkUploader({ setJsonOutput, setError }) {
       <label htmlFor="bookmark-upload" className="upload-label">
         Choose bookmark HTML file to upload
       </label>
+      <div className="link-container">
+        <div>
+          <a
+            className="label-link"
+            href="https://support.google.com/chrome/answer/96816?hl=en"
+          >
+            How to export bookmarks in Chrome
+          </a>
+        </div>
+        <div>
+          <a
+            className="label-link"
+            href="https://learn.microsoft.com/en-us/answers/questions/2369553/how-to-export-favorites-from-edge?forum=microsoftedge-all&referrer=answers"
+          >
+            How to export bookmarks in Edge
+          </a>
+        </div>
+        <div>
+          <a
+            className="label-link"
+            href="https://support.mozilla.org/en-US/kb/export-firefox-bookmarks-to-backup-or-transfer"
+          >
+            How to export bookmarks in Firefox
+          </a>
+        </div>
+      </div>
       <input
         type="file"
         id="bookmark-upload"
