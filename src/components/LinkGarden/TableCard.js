@@ -93,7 +93,9 @@ export default function TableCard({
                     rel="noopener noreferrer"
                     className="label-link"
                   >
-                    {link.label}
+                    {link.label.length > 40
+                      ? link.label.substring(0, 40) + "..."
+                      : link.label}
                   </a>
                 </td>
                 <td className="actions-cell">

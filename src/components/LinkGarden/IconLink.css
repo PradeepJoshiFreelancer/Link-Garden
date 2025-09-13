@@ -1,9 +1,12 @@
 .icon-link {
-    font-size: 1.2em;
-    vertical-align: middle;
-    margin: 0 3px;
-  }
-  .icon-link:hover {
-    color: #d43f3a;
-  }
-  
+  font-size: 1.2em;
+  vertical-align: middle;
+  margin: 0 3px;
+  color: #2186ed;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.icon-link:hover {
+  color: #d43f3a;
+}

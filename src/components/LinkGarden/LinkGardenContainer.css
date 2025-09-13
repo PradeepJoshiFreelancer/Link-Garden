@@ -1,50 +1,51 @@
 .linkgarden-container {
   text-align: center;
   margin: 20px;
+  font-family: 'Segoe UI', Arial, sans-serif;
 }
-  h1 {
-    font-size: 2.1em;
-    margin-bottom: 20px;
-    color: #2386ee;
-    font-weight: 800;
+
+.linkgarden-container h1 {
+  font-size: 2.1em;
+  margin-bottom: 20px;
+  color: #2386ee;
+  font-weight: 800;
+}
+
+.controls-row {
+  display: flex;
+  gap: 18px;
+  margin-bottom: 18px;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.tables-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px 1vw;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+/* Responsive: 3 cards/row desktop, 2/row tablet, 1/row small */
+@media (min-width: 960px) {
+  .table-card {
+    min-width: 29vw;
+    max-width: calc(33vw - 22px);
   }
-  .controls-row {
-    display: flex;
-    gap: 18px;
-    margin-bottom: 18px;
-    align-items: center;
-    flex-wrap: wrap;
+}
+
+@media (max-width: 959px) and (min-width: 651px) {
+  .table-card {
+    min-width: 42vw;
+    max-width: 48vw;
   }
-  .tables-wrap {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 18px 1vw;
-    align-items: flex-start;
-    justify-content: flex-start;
+}
+
+@media (max-width: 650px) {
+  .table-card {
+    min-width: 96vw;
+    max-width: 99vw;
   }
-  /* Responsive: 3 cards/row desktop, 2/row tablet, 1/row small */
-  @media (min-width: 960px) {
-    .tables-wrap {
-      justify-content: flex-start;
-    }
-    .table-card {
-      min-width: 29vw;
-      max-width: calc(33vw - 22px);
-    }
-  }
-  @media (max-width: 950px) {
-    .tables-wrap {
-      justify-content: flex-start;
-    }
-    .table-card {
-      min-width: 42vw;
-      max-width: 48vw;
-    }
-  }
-  @media (max-width: 650px) {
-    .table-card {
-      min-width: 96vw;
-      max-width: 99vw;
-    }
-  }
-  
+}
