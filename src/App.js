@@ -6,7 +6,10 @@ import "./App.css";
 const LOCAL_STORAGE_KEY = "linkGardenFinalJSON";
 
 const fetchJSON = async () => {
-  const cached = localStorage.getItem(LOCAL_STORAGE_KEY);
+  let cached = null;
+  if (typeof window !== "undefined") {
+    cached = localStorage.getItem(LOCAL_STORAGE_KEY);
+  }
 
   if (cached) {
     // Step 2: Use localStorage value
@@ -17,7 +20,9 @@ const fetchJSON = async () => {
   }
 };
 const saveJSON = async (data) => {
-  localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(data));
+  if (typeof window !== "undefined") {
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(data));
+  }
   const blob = new Blob([JSON.stringify(data, null, 2)], {
     type: "application/json",
   });
@@ -71,7 +76,9 @@ function App() {
 
   // JSON upload handler
   const handleJSONUpload = (e) => {
-    localStorage.removeItem(LOCAL_STORAGE_KEY);
+    if (typeof window !== "undefined") {
+      localStorage.removeItem(LOCAL_STORAGE_KEY);
+    }
     const file = e.target.files[0];
     if (!file) return;
     const reader = new FileReader();
@@ -80,7 +87,9 @@ function App() {
         const data = JSON.parse(event.target.result);
         if (!Array.isArray(data)) throw new Error("JSON should be an array.");
         setTables(data);
-        localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(data));
+        if (typeof window !== "undefined") {
+          localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(data));
+        }
       } catch {
         alert("Invalid JSON file for this app.");
       }
