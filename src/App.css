@@ -1,51 +1,89 @@
-.app-root {
+.app-container {
+  min-height: 150vh;
+  padding: 22px 5vw 42px 5vw;
+  max-width: 1400px;
+  margin: 40px auto;
+  padding: 20px;
   font-family: 'Segoe UI', Arial, sans-serif;
   background: #f6f7fa;
-  min-height: 100vh;
-  padding: 22px 5vw 42px 5vw;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
-h1 {
-  font-size: 2.1em;
-  margin-bottom: 20px;
-  color: #2386ee;
-  font-weight: 800;
+
+.title {
+  text-align: center;
+  color: #222;
+  margin-bottom: 30px;
 }
-.controls-row {
+
+.tabs {
   display: flex;
-  gap: 18px;
-  margin-bottom: 18px;
+  justify-content: center;
+  margin-bottom: 30px;
+  gap: 8px;
+}
+
+.tab {
+  background: #e0e7ff;
+  border: none;
+  padding: 12px 28px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 30px;
+  color: #4a4a4a;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.tab:hover {
+  background: #c5d1ff;
+}
+
+.tab.active {
+  background: #3466f2;
+  color: white;
+  box-shadow: 0 4px 10px rgba(52, 102, 242, 0.4);
+}
+
+.tab-content {
+  min-height: 400px;
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+}
+
+.placeholder-tab {
+  display: flex;
+  justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
+  color: #666;
+  font-size: 24px;
+  height: 100%;
 }
-.tables-wrap {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 18px 1vw;
-  align-items: flex-start;
-  justify-content: flex-start;
+
+.error {
+  color: #e03e3e;
+  text-align: center;
+  font-weight: 600;
+  margin-top: 10px;
 }
-/* Responsive: 3 cards/row desktop, 2/row tablet, 1/row small */
-@media (min-width: 960px) {
-  .tables-wrap {
-    justify-content: flex-start;
-  }
-  .table-card {
-    min-width: 29vw;
-    max-width: calc(33vw - 22px);
-  }
+.button {
+  background: #2186ed;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  margin: 3px;
+  cursor: pointer;
+  transition: background 0.2s;
+  display: inline-block;
+  text-align: center;
 }
-@media (max-width: 950px) {
-  .tables-wrap {
-    justify-content: flex-start;
-  }
-  .table-card {
-    min-width: 42vw;
-    max-width: 48vw;
-  }
+.button:hover {
+  background: #1765b4;
 }
-@media (max-width: 650px) {
-  .table-card {
-    min-width: 96vw;
-    max-width: 99vw;
-  }
+input[type=file] {
+  display: none;
 }

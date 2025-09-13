@@ -1,0 +1,26 @@
+.uploader-container {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .upload-label {
+    display: inline-block;
+    padding: 12px 30px;
+    background: #3466f2;
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    user-select: none;
+  }
+  
+  .upload-label:hover {
+    background: #274fcb;
+  }
+  
+  .file-input {
+    display: none;
+  }
+  

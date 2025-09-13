@@ -1,0 +1,62 @@
+.output-container {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    text-align: center;
+  }
+  
+  h2 {
+    text-align: center;
+    color: #222;
+    margin-bottom: 15px;
+  }
+  
+  .json-output {
+    background: #f9f9f9;
+    border-radius: 8px;
+    max-height: 350px;
+    overflow: auto;
+    padding: 15px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 13px;
+    border: 1px solid #ddd;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  
+  .button-group {
+    text-align: center;
+  }
+  
+  .btn {
+    padding: 12px 28px;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0 10px;
+    border-radius: 30px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .copy-btn {
+    background-color: #42b883;
+    color: white;
+  }
+  
+  .copy-btn:hover {
+    background-color: #36a16c;
+  }
+  
+  .download-btn {
+    background-color: #3490dc;
+    color: white;
+  }
+  
+  .download-btn:hover {
+    background-color: #2b7abf;
+  }
+  

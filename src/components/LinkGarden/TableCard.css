@@ -35,6 +35,7 @@
     color: #323232;
     font-weight: 700;
     font-size: 1.07em;
+    align-items: start;
   }
   
   .label-link {
@@ -52,7 +53,6 @@
   }
   
   tr {
-    align-items: start;
     background: #fbfbfb;
   }
   
