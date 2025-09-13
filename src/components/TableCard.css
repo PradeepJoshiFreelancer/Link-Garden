@@ -18,7 +18,8 @@
     gap: 8px;
     margin-bottom: 6px;
     justify-content: space-between;
-    padding: 0 12px 4px 12px;
+    padding: 4px 12px 4px 12px;
+    border-radius: 8px;
   }
   
   table {
@@ -51,6 +52,7 @@
   }
   
   tr {
+    align-items: start;
     background: #fbfbfb;
   }
   

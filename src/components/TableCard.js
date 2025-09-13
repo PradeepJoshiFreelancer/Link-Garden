@@ -37,14 +37,14 @@ export default function TableCard({
 
   return (
     <div className="table-card">
-      <div className="heading-row">
+      <div className="heading-row" style={headerStyle}>
         <TextBox value={heading} onChange={onChangeHeading} />
         <Button onClick={onDeleteTable}>Delete Table</Button>
       </div>
       <table>
         <thead>
-          <tr style={headerStyle}>
-            <th>Label</th>
+          <tr>
+            <th>Links</th>
             <th>Actions</th>
           </tr>
         </thead>

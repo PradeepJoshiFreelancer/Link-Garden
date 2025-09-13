@@ -3,11 +3,21 @@ import TableCard from "./components/TableCard";
 import Button from "./components/Button";
 import "./App.css";
 
+const LOCAL_STORAGE_KEY = "linkGardenFinalJSON";
+
 const fetchJSON = async () => {
-  const resp = await fetch("/data.json");
-  return resp.json();
+  const cached = localStorage.getItem(LOCAL_STORAGE_KEY);
+
+  if (cached) {
+    // Step 2: Use localStorage value
+    return JSON.parse(cached);
+  } else {
+    const resp = await fetch("/data.json");
+    return resp.json();
+  }
 };
 const saveJSON = async (data) => {
+  localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(data));
   const blob = new Blob([JSON.stringify(data, null, 2)], {
     type: "application/json",
   });
@@ -23,6 +33,12 @@ function App() {
   useEffect(() => {
     fetchJSON().then(setTables);
   }, []);
+
+  // useEffect(() => {
+  //   console.log(2);
+
+  //   localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(tables));
+  // }, [tables]);
 
   const handleAddTable = () =>
     setTables([...tables, { heading: "New Table", links: [] }]);
@@ -55,6 +71,7 @@ function App() {
 
   // JSON upload handler
   const handleJSONUpload = (e) => {
+    localStorage.removeItem(LOCAL_STORAGE_KEY);
     const file = e.target.files[0];
     if (!file) return;
     const reader = new FileReader();
@@ -63,6 +80,7 @@ function App() {
         const data = JSON.parse(event.target.result);
         if (!Array.isArray(data)) throw new Error("JSON should be an array.");
         setTables(data);
+        localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(data));
       } catch {
         alert("Invalid JSON file for this app.");
       }
