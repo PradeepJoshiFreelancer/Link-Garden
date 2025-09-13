@@ -94,16 +94,3 @@
 input[type='file'] {
   display: none;
 }
-.label-link {
-  color: #2186ed;
-  font-weight: 500;
-  text-decoration: underline;
-  margin-right: 8px;
-  cursor: pointer;
-}
-
-.link-container{
-  display: flex;
-  justify-content: space-between;
-  margin:20px;
-}
